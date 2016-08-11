@@ -209,7 +209,7 @@ protected function removerCosechaSiembra(Request $request)
      */
     protected function obtenerTodosLosAnopro()
     {
-    	$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/fincas');
+    	$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/anopro');
     	$datos = json_decode($respuesta);
     	$anopros = $datos->data;
     	return $anopros;

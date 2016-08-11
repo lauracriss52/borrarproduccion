@@ -204,6 +204,18 @@ protected function removerCosechaSiembra(Request $request)
     	return $fincas;
 		
     }
+  /**
+     * Métodos para Fincas
+     */
+    protected function obtenerTodosLosAnopro()
+    {
+    	$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/fincas');
+    	$datos = json_decode($respuesta);
+    	$anopros = $datos->data;
+    	return $anopros;
+		
+    }
+
 
  
 

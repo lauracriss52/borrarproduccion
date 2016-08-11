@@ -85,9 +85,8 @@ Route::get('/personas/actualizar', 'PersonasController@elegirPersona');
 
 Route::post('/personas/eliminar', 'PersonasController@eliminarPersona');
 Route::get('/personas/eliminar', 'PersonasController@seleccionarPersona');
-// procedimiento para las fincas
+// procedimientos para las fincas
 Route::get('/fincas/', 'FincasController@mostrarFincas');
-
-// Obtener todas las fincas
-Route::get('/fincas/', 'FincasController@mostrarAnopro');
-
+ // procedimiento listar productos
+ Route::get('/productos/', 'ProductosController@mostrarProductos');
+ 

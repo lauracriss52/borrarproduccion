@@ -10,14 +10,14 @@ class PersonasController extends Controller
 {
      public function mostrarPersonas()
 	{
-		$personas = $this->Obtenertodoslospersonas();	
+		$personas = $this->obtenerTodasLaspersonas();	
 		return view('personas.todos',['personas'=>$personas]);
 //		return 'hello';
 	}
 	
-	protected function Obtenertodoslospersonas()
+	protected function obtenerTodasLaspersonas()
 	{
-		$respuesta=$this->realizarPeticion('GET' , 'http://colegio.com:8889/personas');
+		$respuesta=$this->realizarPeticion('GET' , 'http://www.agroproduccion.com:81/personas');
 		//transformacion a json
 		$datos= json_decode($respuesta);
 		$personas=$datos->data;

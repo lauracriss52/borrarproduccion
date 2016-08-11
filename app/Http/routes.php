@@ -56,7 +56,7 @@ Route::get('/personas/siembras/actualizar', 'PersonaSiembrasController@elegirSie
 
 Route::post('/siembras/cosechas', 'SiembraCosechasController@mostrarCosechadeunasiembra');
 Route::get('/siembras/cosechas', 'SiembraCosechasController@mostrarSiembras');
-Route::get('/siembras/cosechas/rendimiento', 'SiembraCosechasController@mostrarSiembras');
+Route::get('/siembras/cosechas/rendimiento', 'SiembraCosechasController@mostrarrendimientoSiembras');
 
 //Agregar cosechas a un siembra
 Route::post('/siembras/cosechas/agregar', 'SiembraCosechasController@agregarCosechaSiembra');
@@ -85,3 +85,9 @@ Route::get('/personas/actualizar', 'PersonasController@elegirPersona');
 
 Route::post('/personas/eliminar', 'PersonasController@eliminarPersona');
 Route::get('/personas/eliminar', 'PersonasController@seleccionarPersona');
+// procedimiento para las fincas
+Route::get('/fincas/', 'FincasController@mostrarFincas');
+
+// Obtener todas las fincas
+Route::get('/fincas/', 'FincasController@mostrarAnopro');
+

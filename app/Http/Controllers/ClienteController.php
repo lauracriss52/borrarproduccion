@@ -8,6 +8,14 @@ use produccion\Http\Requests;
 
 class ClienteController extends Controller
 {
+	//metodo para productos
+	protected function ListarTodosLosProductos()
+	{
+		$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/siembras');
+		$datos = json_decode($respuesta);
+		$productos = $datos->data;
+		return $siembras;
+		}
       /**
      * Métodos para Siembras
      */
@@ -192,28 +200,6 @@ protected function removerCosechaSiembra(Request $request)
         $siembras = $datos->data;
 
         return $siembras;
-    }
-  /**
-     * Métodos para Fincas
-     */
-    protected function obtenerTodasLasFincas()
-    {
-    	$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/fincas');
-    	$datos = json_decode($respuesta);
-    	$fincas = $datos->data;
-    	return $fincas;
-		
-    }
-  /**
-     * Métodos para Fincas
-     */
-    protected function obtenerTodosLosAnopro()
-    {
-    	$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/anopro');
-    	$datos = json_decode($respuesta);
-    	$anopros = $datos->data;
-    	return $anopros;
-		
     }
 
 

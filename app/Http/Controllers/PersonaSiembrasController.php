@@ -10,7 +10,7 @@ class PersonaSiembrasController extends ClienteController
 {
       public function mostrarPersonas()
     {
-    	$personas = $this->obtenerTodosLasPersonas();
+    	$personas = $this->obtenerTodasLasPersonas();
     	return view('persona-siembras.personas', ['personas' => $personas]);
     }
     public function mostrarSiembrasPersona(Request $request)
@@ -23,7 +23,7 @@ class PersonaSiembrasController extends ClienteController
 //1. Formulario para agregar una siembra cargando las personas que ya están en la basede datos
 public function agregarSiembra()
     {
-        $personas = $this->obtenerTodosLasPersonas();
+        $personas = $this->obtenerTodasLasPersonas();
 
         return view('persona-siembras.agregar', ['personas' => $personas]);
     }
@@ -65,7 +65,7 @@ public function elegirSiembra()
 
         $siembra = $this->obtenerUnaSiembra($idSiembra);
    		
-        $personas = $this->obtenerTodosLasPersonas();
+        $personas = $this->obtenerTodasLasPersonas();
 
         return view('persona-siembras.editar', ['siembra' => $siembra, 'personas' => $personas]);
     }

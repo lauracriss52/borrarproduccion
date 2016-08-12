@@ -11,7 +11,7 @@ class SiembrasController extends Controller
     }
     protected function obtenerTodasLasSiembras()
     {
-    	$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:8889/siembras');
+    	$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/siembras');
     	$datos = json_decode($respuesta);
     	$siembras = $datos->data;
     	return $siembras;

@@ -12,7 +12,7 @@ class PersonasController extends ClienteController
 {
   	 public function mostrarPersonas()
     {
-    	$personas = $this->obtenerTodosLasPersonas();
+    	$personas = $this->obtenerTodasLasPersonas();
     	return view('personas.todos', ['personas' => $personas]);
     }
     public function mostrarPersona()
@@ -36,7 +36,7 @@ class PersonasController extends ClienteController
     }
     public function elegirPersona()
     {
-        $personas = $this->obtenerTodosLasPersonas();
+        $personas = $this->obtenerTodasLasPersonas();
         return view('personas.elegir', ['personas' => $personas]);
     }
     public function editarPersona(Request $request)
@@ -54,7 +54,7 @@ class PersonasController extends ClienteController
 	
     public function seleccionarPersona()
     {
-        $personas = $this->obtenerTodosLasPersonas();
+        $personas = $this->obtenerTodasLasPersonas();
         return view('personas.seleccionar', ['personas' => $personas]);
     }
 	

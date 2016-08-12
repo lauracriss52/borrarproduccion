@@ -33,7 +33,7 @@ class SiembrasController extends ClienteController
  
         $id = $request->get('id');
        // $siembra = $this->obtenerUnaSiembra($id);
-		$respuesta = $this->realizarPeticion('GET', "http://agroproduccion.com:8889/siembras/{$id}");
+		$respuesta = $this->realizarPeticion('GET', "http://agroproduccion.com:81/siembras/{$id}");
         $datos = json_decode($respuesta);
         $siembra = $datos->data;
         return view('siembras.mostrar', ['siembra' => $siembra]);
@@ -47,7 +47,7 @@ class SiembrasController extends ClienteController
     {
         $access_token = 'Bearer '.$this->obtenerAccessToken();
         echo $access_token;
-		$respuesta = $this->realizarPeticion('POST', 'http://agroproduccion.com:8889/siembras', ['headers' => ['Authorization' => $access_token], 'form_params' => $request->all()]);
+		$respuesta = $this->realizarPeticion('POST', 'http://agroproduccion.com:81/siembras', ['headers' => ['Authorization' => $access_token], 'form_params' => $request->all()]);
         return redirect('/siembras');
     }
  
@@ -56,7 +56,7 @@ class SiembrasController extends ClienteController
  
   protected function obtenerTodasLasSiembras()
     {
-    	$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:8889/siembras');
+    	$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/siembras');
     	$datos = json_decode($respuesta);
     	$siembras = $datos->data;
     	return $siembras;

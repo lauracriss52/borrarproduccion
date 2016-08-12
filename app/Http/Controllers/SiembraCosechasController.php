@@ -31,9 +31,10 @@ class SiembraCosechasController extends ClienteController
 	
 	 public function formularioagregarCosechasSiembras()
     {
-        $siembras = $this->obtenerTodasLasSiembras();
-        $cosechas = $this->obtenerTodosLasCosechas();
 
+        $siembras = $this->obtenerTodasLasSiembras();
+		$cosechas = $this->obtenerTodasLasCosechas();
+//$cosechas='1';
         return view('siembra-cosechas.formularioagregar', ['siembras' => $siembras, 'cosechas' => $cosechas]);
     }
 
@@ -43,6 +44,8 @@ class SiembraCosechasController extends ClienteController
 
         return redirect('/siembras/cosechas');
     }
+	
+	 
 	
 	//Eliminar un siembra asignado a un cosecha
 	

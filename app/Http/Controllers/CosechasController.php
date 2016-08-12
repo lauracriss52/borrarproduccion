@@ -11,7 +11,7 @@ class CosechasController extends ClienteController
 
   public function mostrarCosechas()
     {
-    	$cosechas = $this->obtenerTodosLasCosechas();
+    	$cosechas = $this->obtenerTodasLasCosechas();
     	return view('cosechas.todos', ['cosechas' => $cosechas]);
     }
 	
@@ -49,7 +49,7 @@ class CosechasController extends ClienteController
     //1. 
     public function elegirCosecha()
     {
-        $cosechas = $this->obtenerTodosLasCosechas();
+        $cosechas = $this->obtenerTodasLasCosechas();
         return view('cosechas.elegir', ['cosechas' => $cosechas]);
     }
 
@@ -73,7 +73,7 @@ class CosechasController extends ClienteController
 	
 		    public function seleccionarCosecha()
     {
-        $cosechas = $this->obtenerTodosLasCosechas();
+        $cosechas = $this->obtenerTodasLasCosechas();
         return view('cosechas.seleccionar', ['cosechas' => $cosechas]);
     }
 	
@@ -88,12 +88,12 @@ class CosechasController extends ClienteController
 /*
   public function mostrarCosechas()
     {
-    	$cosechas = $this->obtenerTodosLasCosechas();
+    	$cosechas = $this->obtenerTodasLasCosechas();
     	return view('cosechas.todos', ['cosechas' => $cosechas]);
     }
-    protected function obtenerTodosLasCosechas()
+    protected function obtenerTodasLasCosechas()
     {
-    	$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:8889/cosechas');
+    	$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/cosechas');
     	$datos = json_decode($respuesta);
     	$cosechas = $datos->data;
     	return $cosechas;
@@ -112,7 +112,7 @@ class CosechasController extends ClienteController
     }
     protected function obtenerUnaCosecha($id)
     {
-        $respuesta = $this->realizarPeticion('GET', "http://agroproduccion.com:8889/cosechas/{$id}");
+        $respuesta = $this->realizarPeticion('GET', "http://agroproduccion.com:81/cosechas/{$id}");
         $datos = json_decode($respuesta);
         $cosecha = $datos->data;
         return $cosecha;
@@ -127,7 +127,7 @@ class CosechasController extends ClienteController
     {
         $access_token = 'Bearer '.$this->obtenerAccessToken();
         echo $access_token;
-		$respuesta = $this->realizarPeticion('POST', 'http://agroproduccion.com:8889/cosechas', ['headers' => ['Authorization' => $access_token], 'form_params' => $request->all()]);
+		$respuesta = $this->realizarPeticion('POST', 'http://agroproduccion.com:81/cosechas', ['headers' => ['Authorization' => $access_token], 'form_params' => $request->all()]);
         return redirect('/cosechas');
     }
 	
@@ -136,7 +136,7 @@ class CosechasController extends ClienteController
 	
 	 public function elegirCosecha()
     {
-        $cosechas = $this->obtenerTodosLasCosechas();
+        $cosechas = $this->obtenerTodasLasCosechas();
         return view('cosechas.elegir', ['cosechas' => $cosechas]);
     }
     public function editarCosecha(Request $request)
@@ -149,6 +149,6 @@ class CosechasController extends ClienteController
     {
         $accessToken = 'Bearer ' . $this->obtenerAccessToken();
         $id = $request->get('id');
-        $respuesta = $this->realizarPeticion('PUT', "http://agroproduccion.com:8889/cosechas/{$id}", ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->except('id')]);
+        $respuesta = $this->realizarPeticion('PUT', "http://agroproduccion.com:81/cosechas/{$id}", ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->except('id')]);
         return redirect('/cosechas');
     }*/

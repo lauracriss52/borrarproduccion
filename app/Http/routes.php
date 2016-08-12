@@ -93,4 +93,9 @@ Route::get('/fincas/', 'FincasController@mostrarFincas');
  Route::get('/usuariocliente/', 'UsuarioClienteController@mostrarUsuarioCliente');
  //procedimeonto listar suelo
   Route::get('/suelo/', 'SueloController@mostrarSuelo');
+  //-----anopro controller-----------------------------------------------------------------------------
+Route::get('/anopros/', 'AnoproController@mostrarAnopro');
+
+//-----novedades controller-----------------------------------------------------------------------------
+Route::get('/novedades/', 'NovedadesController@mostrarNovedad');
  

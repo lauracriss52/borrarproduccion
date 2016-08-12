@@ -38,15 +38,15 @@
 			  <a href="{{url('/siembras/cosechas')}}" class="list-group-item">Obtener el rendimiento de la cosecha</a>
 			  <a href="{{url('/siembras/cosechas/agregar')}}" class="list-group-item">Agregar una Cosecha a Una Siembra</a>
 			  <a href="{{url('/siembras/cosechas/eliminar')}}" class="list-group-item">Eliminar una Cosecha de Una Siembra</a>
-			     </div>
-	     </p>
-         
-         <div class="list-group">
-			 <a href="{{url('/fincas/')}}" class="list-group-item">Obtener todas las ficas</a>
+	
+			
        </div>
+        
         <div class="list-group">
-			 <a href="{{url('/anopro/')}}" class="list-group-item">Obtener todos los Años de produccion</a>
-       </div>
+        <p><a href="{{url('/productos')}}" class="list-group-item">Listar Todos los Productos</a>
+        
+        </div>
+        
         
 
 @endsection

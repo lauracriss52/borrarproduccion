@@ -38,25 +38,18 @@
 			  <a href="{{url('/siembras/cosechas')}}" class="list-group-item">Obtener el rendimiento de la cosecha</a>
 			  <a href="{{url('/siembras/cosechas/agregar')}}" class="list-group-item">Agregar una Cosecha a Una Siembra</a>
 			  <a href="{{url('/siembras/cosechas/eliminar')}}" class="list-group-item">Eliminar una Cosecha de Una Siembra</a>
-	
-			
-       </div>
-        
-        <div class="list-group">
-        <p><a href="{{url('/producto')}}" class="list-group-item">Listar Todos los Productos</a>
-        
-        </div>
-          
-        <div class="list-group">
-        <p><a href="{{url('/oauth_clients')}}" class="list-group-item">Listar Todos los Usuarios</a>
-        
-        </div>
-        
+			     </div>
+	     </p>
+         
          <div class="list-group">
-        <p><a href="{{url('/suelo')}}" class="list-group-item">Listar Todos los Usuarios</a>
-        
-        </div>
-        
+			 <a href="{{url('/fincas/')}}" class="list-group-item">Obtener todas las ficas</a>
+       </div>
+        <div class="list-group">
+			 <a href="{{url('/anopro/')}}" class="list-group-item">Obtener todos los Años de produccion</a>
+       </div>
+           <div class="list-group">
+			 <a href="{{url('/novedad/')}}" class="list-group-item">Obtener todos las Novedades</a>
+       </div>
         
 
 @endsection

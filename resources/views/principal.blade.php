@@ -43,7 +43,17 @@
        </div>
         
         <div class="list-group">
-        <p><a href="{{url('/productos')}}" class="list-group-item">Listar Todos los Productos</a>
+        <p><a href="{{url('/producto')}}" class="list-group-item">Listar Todos los Productos</a>
+        
+        </div>
+          
+        <div class="list-group">
+        <p><a href="{{url('/oauth_clients')}}" class="list-group-item">Listar Todos los Usuarios</a>
+        
+        </div>
+        
+         <div class="list-group">
+        <p><a href="{{url('/suelo')}}" class="list-group-item">Listar Todos los Usuarios</a>
         
         </div>
         

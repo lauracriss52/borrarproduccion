@@ -91,4 +91,6 @@ Route::get('/fincas/', 'FincasController@mostrarFincas');
  Route::get('/productos/', 'ProductosController@mostrarProductos');
  // procedimiento listar usuarioscliente
  Route::get('/usuariocliente/', 'UsuarioClienteController@mostrarUsuarioCliente');
+ //procedimeonto listar suelo
+  Route::get('/suelo/', 'SueloController@mostrarSuelo');
  

@@ -70,8 +70,6 @@ Route::get('/siembras/cosechas/eliminar', 'SiembraCosechasController@seleccionar
 Route::post('/personas/siembras', 'PersonaSiembrasController@mostrarSiembrasPersona');
 Route::get('/personas/siembras', 'PersonaSiembrasController@mostrarPersonas');
 
-
-//-----personas controller-----------------------------------------------------------------------------
 Route::get('/personas', 'PersonasController@mostrarPersonas');
 Route::post('/personas/unico', 'PersonasController@obtenerPersona');
 Route::get('/personas/unico', 'PersonasController@mostrarPersona');
@@ -85,8 +83,12 @@ Route::get('/personas/actualizar', 'PersonasController@elegirPersona');
 
 Route::post('/personas/eliminar', 'PersonasController@eliminarPersona');
 Route::get('/personas/eliminar', 'PersonasController@seleccionarPersona');
-// procedimientos para las fincas
+
+//-----fincas controller-----------------------------------------------------------------------------
 Route::get('/fincas/', 'FincasController@mostrarFincas');
- // procedimiento listar productos
- Route::get('/productos/', 'ProductosController@mostrarProductos');
- 
+
+//-----anopro controller-----------------------------------------------------------------------------
+Route::get('/anopros/', 'FincasController@mostrarAnopro');
+
+//-----novedades controller-----------------------------------------------------------------------------
+Route::get('/novedades/', 'FincasController@mostrarNovedad');

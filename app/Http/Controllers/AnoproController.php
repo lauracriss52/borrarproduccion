@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use produccion\Http\Requests;
 
-class FincasController extends Controller
+class AnoproController extends Controller
 {
     //método para mostrar las Año produccion
 	

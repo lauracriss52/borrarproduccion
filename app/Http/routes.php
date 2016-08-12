@@ -88,7 +88,7 @@ Route::get('/personas/eliminar', 'PersonasController@seleccionarPersona');
 Route::get('/fincas/', 'FincasController@mostrarFincas');
 
 //-----anopro controller-----------------------------------------------------------------------------
-Route::get('/anopros/', 'FincasController@mostrarAnopro');
+Route::get('/anopros/', 'AnoproController@mostrarAnopro');
 
 //-----novedades controller-----------------------------------------------------------------------------
-Route::get('/novedades/', 'FincasController@mostrarNovedad');
+Route::get('/novedades/', 'NovedadesController@mostrarNovedad');

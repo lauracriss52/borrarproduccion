@@ -6,13 +6,16 @@ use Illuminate\Http\Request;
 
 use produccion\Http\Requests;
 
-class ProductoController extends Controller
-{
+use produccion\Http\Requests\UnicoRequest;
+
+class ProductosController extends ClienteController
     //método para mostrar las Productos
 	
-	public function mostrarProductos()
-	{
-		$productos = $this->ListarTodosLosProductos();
-		return view('productos.todos', ['productos' => $productos]);
+		{
+			public function mostrarProductos()
+			
+			{
+		$producto = $this->ListarTodosLosProductos();
+		return view('producto.todos', ['producto' => $producto]);
 	}
 }

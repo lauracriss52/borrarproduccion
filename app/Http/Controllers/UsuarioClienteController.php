@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use produccion\Http\Requests;
 
-class ProductoController extends Controller
+use produccion\Http\Requests\UnicoRequest;
+
+class UsuarioClienteController extends ClienteController
 {
     //método para mostrar las Productos
 	

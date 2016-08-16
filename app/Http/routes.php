@@ -88,14 +88,9 @@ Route::get('/personas/eliminar', 'PersonasController@seleccionarPersona');
 // procedimientos para las fincas
 Route::get('/fincas/', 'FincasController@mostrarFincas');
  // procedimiento listar productos
- Route::get('/productos/', 'ProductosController@mostrarProductos');
+Route::get('/producto/', 'ProductosController@mostrarProductos');
  // procedimiento listar usuarioscliente
- Route::get('/usuariocliente/', 'UsuarioClienteController@mostrarUsuarioCliente');
+Route::get('/usuariocliente/', 'UsuarioClienteController@mostrarUsuarioCliente');
  //procedimeonto listar suelo
-  Route::get('/suelo/', 'SueloController@mostrarSuelo');
-  //-----anopro controller-----------------------------------------------------------------------------
-Route::get('/anopros/', 'AnoproController@mostrarAnopro');
-
-//-----novedades controller-----------------------------------------------------------------------------
-Route::get('/novedades/', 'NovedadesController@mostrarNovedad');
+Route::get('/suelo/', 'SueloController@mostrarSuelo');
  

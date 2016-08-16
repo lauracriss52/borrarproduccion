@@ -6,13 +6,15 @@ use Illuminate\Http\Request;
 
 use produccion\Http\Requests;
 
-class SueloController extends Controller
+use produccion\Http\Requests\UnicoRequest;
+
+class SueloController extends ClienteController
 {
     //método para mostrar las Productos
 	
 	public function mostrarSuelo()
 	{
-		$usuariocliente = $this->ListarTodosLosSuelos();
+		$suelo = $this->ListarTodosLosSuelos();
 		return view('suelo.todos', ['suelo' => $suelo]);
 	}
 }

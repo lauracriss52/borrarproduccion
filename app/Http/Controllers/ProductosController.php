@@ -15,24 +15,25 @@ class ProductosController extends ClienteController
 			public function mostrarProductos()
 			
 			{
-		$producto = $this->obtenerTodosLosProductos();
-		return view('producto.todos', ['producto' => $producto]);
+		$productos = $this->obtenerTodosLosProductos();
+		return view('productos.todos', ['productos' => $productos]);
 	}
-	public function mostrarProducto()
-    {
-        return view('producto.unico');
-    }
-    public function obtenerProducto(UnicoRequest $request)
+	public function obtenerProducto(UnicoRequest $request)
     {
         $id = $request->get('id');
-        $producto = $this->obtenerUnProducto($id);
-        return view('producto.mostrar', ['producto' => $producto]);
+        $productos = $this->obtenerUnProducto($id);
+        return view('productos.mostrar', ['productos' => $productos]);
     }
 	
+	public function mostrarProducto()
+    {
+        return view('productos.unico');
+    }
+    
 	//métodos para agregar fincas
     public function agregarProducto()
     {
-        return view('producto.agregar');
+        return view('productos.agregar');
     }
 	
 
@@ -41,7 +42,7 @@ class ProductosController extends ClienteController
     public function crearProducto(Request $request)
     {
         $this->almacenarProducto($request);
-        return redirect('/producto');
+        return redirect('/productos');
     }
 
 	
@@ -50,23 +51,23 @@ class ProductosController extends ClienteController
     //1. 
     public function elegirProducto()
     {
-        $fincas = $this->obtenerTodosLosProductos();
-        return view('producto.elegir', ['producto' => $producto]);
+        $productos = $this->obtenerTodosLosProductos();
+        return view('productos.elegir', ['productos' => $productos]);
     }
 
 	
 	public function editarProducto(Request $request)
     {
-        $id = $request->get('producto_id');
-        $cosecha = $this->obtenerProducto($id);
-        return view('producto.editar', ['producto' => $producto]);
+        $id = $request->get('productos_id');
+        $productos = $this->obtenerUnProducto($id);
+        return view('productos.editar', ['productos' => $productos]);
     }
 	
 	
     public function actualizarProducto(Request $request)
     {
         $this->modificarProducto($request);
-        return redirect('/producto');
+        return redirect('/productos');
     }
 
 	
@@ -74,14 +75,14 @@ class ProductosController extends ClienteController
 	
 		    public function seleccionarProducto()
     {
-        $fincas = $this->obtenerTodosLosProductos();
-        return view('producto.seleccionar', ['producto' => $producto]);
+        $productos = $this->obtenerTodosLosProductos();
+        return view('productos.seleccionar', ['productos' => $productos]);
     }
 	
     public function eliminarProducto(Request $request)
     {
         $this->removerProducto($request);
-        return redirect('/producto');
+        return redirect('/productos');
     }
 
 }  

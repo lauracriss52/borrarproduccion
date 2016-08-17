@@ -282,35 +282,35 @@ protected function removerCosechaSiembra(Request $request)
 	//metodo para productos
 	protected function obtenerTodosLosProductos()
 	{
-		$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/producto');
+		$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/productos');
 		$datos = json_decode($respuesta);
-		$producto = $datos->data;
-		return $producto;
+		$productos = $datos->data;
+		return $productos;
 		}
 protected function obtenerUnProducto($id)
     {
-        $respuesta = $this->realizarPeticion('GET', "http://agroproduccion.com:81/producto/{$id}");
+        $respuesta = $this->realizarPeticion('GET', "http://agroproduccion.com:81/productos/{$id}");
         $datos = json_decode($respuesta);
-        $producto = $datos->data;
-        return $producto;
+        $productos = $datos->data;
+        return $productos;
     }
 	
 protected function almacenarProducto(Request $request)
     {
     	$accessToken = 'Bearer ' . $this->obtenerAccessToken();
-        $respuesta = $this->realizarPeticion('POST', 'http://agroproduccion.com:81/producto', ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->all()]);
+        $respuesta = $this->realizarPeticion('POST', 'http://agroproduccion.com:81/productos', ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->all()]);
     }
     protected function modificarProducto(Request $request)
     {
     	$accessToken = 'Bearer ' . $this->obtenerAccessToken();
         $id = $request->get('id');
-        $respuesta = $this->realizarPeticion('PUT', "http://agroproduccion.com:81/producto/{$id}", ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->except('id')]);
+        $respuesta = $this->realizarPeticion('PUT', "http://agroproduccion.com:81/productos/{$id}", ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->except('id')]);
     }
     protected function removerProducto(Request $request)
     {
     	$accessToken = 'Bearer ' . $this->obtenerAccessToken();
-        $id = $request->get('producto_id');
-        $respuesta = $this->realizarPeticion('DELETE', "http://agroproduccion.com:81/producto/{$id}", ['headers' => ['Authorization' => $accessToken]]);
+        $id = $request->get('productos_id');
+        $respuesta = $this->realizarPeticion('DELETE', "http://agroproduccion.com:81/productos/{$id}", ['headers' => ['Authorization' => $accessToken]]);
     }
  
 

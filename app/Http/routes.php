@@ -102,19 +102,19 @@ Route::get('/fincas/eliminar', 'FincasController@seleccionarFinca');
 
 //-----------------------------------------------------------------------------------------------------------
  // procedimientos productos
-Route::get('/producto/', 'ProductosController@mostrarProductos');
-Route::post('/producto/unico', 'ProductosController@obtenerProducto');
-Route::get('/producto/unico', 'ProductosController@mostrarProducto');
+Route::get('/productos/', 'ProductosController@mostrarProductos');
+Route::post('/productos/unico', 'ProductosController@obtenerProducto');
+Route::get('/productos/unico', 'ProductosController@mostrarProducto');
 
-Route::post('/producto/agregar', 'ProductosController@crearProducto');
-Route::get('/producto/agregar', 'ProductosController@agregarProducto');
+Route::post('/productos/agregar', 'ProductosController@crearProducto');
+Route::get('/productos/agregar', 'ProductosController@agregarProducto');
 
-Route::put('/producto/actualizar', 'ProductosController@actualizarProducto');
-Route::post('/producto/actualizar', 'Productostroller@editarProducto');
-Route::get('/producto/actualizar', 'ProductosController@elegirProducto');
+Route::put('/productos/actualizar', 'ProductosController@actualizarProducto');
+Route::post('/productos/actualizar', 'ProductosController@editarProducto');
+Route::get('/productos/actualizar', 'ProductosController@elegirProducto');
 
-Route::post('/producto/eliminar', 'ProductosController@eliminarProducto');
-Route::get('/producto/eliminar', 'ProductosController@seleccionarProducto');
+Route::post('/productos/eliminar', 'ProductosController@eliminarProducto');
+Route::get('/productos/eliminar', 'ProductosController@seleccionarProducto');
 
  // procedimiento listar usuarioscliente
 Route::get('/usuariocliente/', 'UsuarioClienteController@mostrarUsuarioCliente');

@@ -50,6 +50,25 @@
 			     </div>
 	     </p>
          
+            <div class="list-group">
+        <p><a href="{{url('/producto')}}" class="list-group-item">Listar Todos los Productos</a>
+        <a href="{{url('/producto/unico')}}" class="list-group-item">Obtener un Producto</a>
+        <a href="{{url('/producto/agregar')}}" class="list-group-item">Agregar un Producto</a>
+        <a href="{{url('/producto/actualizar')}}" class="list-group-item">Actualizar un Producto</a>
+        <a href="{{url('/producto/eliminar')}}" class="list-group-item">Eliminar un Producto</a>
+        
+        </div>
+          
+        <div class="list-group">
+        <p><a href="{{url('/usuariocliente')}}" class="list-group-item">Listar Todos los Usuarios</a>
+        
+        </div>
+        
+         <div class="list-group">
+        <p><a href="{{url('/suelo')}}" class="list-group-item">Listar Todos los Suelos</a>
+        
+        </div>
+         
       
         
 

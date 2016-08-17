@@ -23,23 +23,23 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach($novedades as $fnovedades)
+				@foreach($novedades as $novedades)
 				<tr>
-					<td>{{$novedad->id}}</td>
-                    <td>{{$novedad->tipnov_nov}}</td>
-                    <td>{{$novedad->camellon_nov}}</td>
-                    <td>{{$novedad->fecha_nov}}</td>
-                    <td>{{$novedad->producto_nov}}</td>
-                    <td>{{$novedad->tiempo_nov}}</td>
-                    <td>{{$novedad->dosis_nov}}</td>
-                    <td>{{$novedad->costopro_nov}}</td>
-                    <td>{{$novedad->costoman_nov}}</td>
-                    <td>{{$novedad->operario_nov}}</td>
-                    <td>{{$novedad->cattoxica_nov}}</td>
-                    <td>{{$novedad->estado_nov}}</td>
-                    <td>{{$novedad->siembra_id}}</td>
-                    <td>{{$novedad->created_at}}</td>
-                    <td>{{$novedad->updated_at}}</td>
+					<td>{{$novedades->id}}</td>
+                    <td>{{$novedades->tipnov_nov}}</td>
+                    <td>{{$novedades->camellon_nov}}</td>
+                    <td>{{$novedades->fecha_nov}}</td>
+                    <td>{{$novedades->producto_nov}}</td>
+                    <td>{{$novedades->tiempo_nov}}</td>
+                    <td>{{$novedades->dosis_nov}}</td>
+                    <td>{{$novedades->costopro_nov}}</td>
+                    <td>{{$novedades->costoman_nov}}</td>
+                    <td>{{$novedades->operario_nov}}</td>
+                    <td>{{$novedades->cattoxica_nov}}</td>
+                    <td>{{$novedades->estado_nov}}</td>
+                    <td>{{$novedades->siembra_id}}</td>
+                    <td>{{$novedades->created_at}}</td>
+                    <td>{{$novedades->updated_at}}</td>
                     
 					
                     

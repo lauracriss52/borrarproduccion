@@ -14,7 +14,7 @@ class NovedadesController extends ClienteController
 	
   public function mostrarNovedad()
     {
-    	$novedades = $this->obtenerTodosLosNovedades);
+    	$novedades = $this->obtenerTodosLosNovedades();
     	return view('novedades.todos', ['novedades' => $novedades]);
 
 	

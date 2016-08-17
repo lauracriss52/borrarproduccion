@@ -247,15 +247,71 @@ protected function removerCosechaSiembra(Request $request)
   /**
      * Métodos para Novedades
      */
-    protected function obtenerTodosLasNoveades()
+    protected function obtenerTodosLosNovedades()
     {
     	$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/novedades');
     	$datos = json_decode($respuesta);
-    	$noveades = $datos->data;
+    	$novedades = $datos->data;
     	return $novedades;
 		
     }
+	
+	
+	//------------------------------------------------------------------------------->
+	
+	
+	//metodo para Suelo
 
+	protected function ListarTodosLosSuelos()
+	{
+		$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/suelo');
+		$datos = json_decode($respuesta);
+		$suelo = $datos->data;
+		return $suelo;
+		}
+
+	//metodo para UsuarioCliente
+	protected function ListarTodosLosUsuarios()
+	{
+		$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/oauth_clients');
+		$datos = json_decode($respuesta);
+		$usuariocliente = $datos->data;
+		return $usuariocliente;
+		}
+
+	//metodo para productos
+	protected function obtenerTodosLosProductos()
+	{
+		$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/producto');
+		$datos = json_decode($respuesta);
+		$producto = $datos->data;
+		return $producto;
+		}
+protected function obtenerUnProducto($id)
+    {
+        $respuesta = $this->realizarPeticion('GET', "http://agroproduccion.com:81/producto/{$id}");
+        $datos = json_decode($respuesta);
+        $producto = $datos->data;
+        return $producto;
+    }
+	
+protected function almacenarProducto(Request $request)
+    {
+    	$accessToken = 'Bearer ' . $this->obtenerAccessToken();
+        $respuesta = $this->realizarPeticion('POST', 'http://agroproduccion.com:81/producto', ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->all()]);
+    }
+    protected function modificarProducto(Request $request)
+    {
+    	$accessToken = 'Bearer ' . $this->obtenerAccessToken();
+        $id = $request->get('id');
+        $respuesta = $this->realizarPeticion('PUT', "http://agroproduccion.com:81/producto/{$id}", ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->except('id')]);
+    }
+    protected function removerProducto(Request $request)
+    {
+    	$accessToken = 'Bearer ' . $this->obtenerAccessToken();
+        $id = $request->get('producto_id');
+        $respuesta = $this->realizarPeticion('DELETE', "http://agroproduccion.com:81/producto/{$id}", ['headers' => ['Authorization' => $accessToken]]);
+    }
  
 
 }

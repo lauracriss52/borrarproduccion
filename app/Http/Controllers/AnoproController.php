@@ -13,7 +13,7 @@ class AnoproController extends ClienteController
   public function mostrarAnopro()
     {
     	$anopros = $this->obtenerTodosLosAnopros();
-    	return view('anopro.todos', ['anopro' => $anopros]);
+    	return view('anopros.todos', ['anopros' => $anopros]);
 
 }
 }

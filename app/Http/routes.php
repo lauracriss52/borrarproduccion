@@ -84,7 +84,7 @@ Route::get('/personas/actualizar', 'PersonasController@elegirPersona');
 Route::post('/personas/eliminar', 'PersonasController@eliminarPersona');
 Route::get('/personas/eliminar', 'PersonasController@seleccionarPersona');
 
-//-----fincas controller-----------------------------------------------------------------------------
+//-----Productos controller-----------------------------------------------------------------------------
 Route::get('/fincas/', 'FincasController@mostrarFincas');
 //buscar estudiante por id
 Route::get('/fincas/unico', 'FincasController@mostrarFinca');
@@ -100,9 +100,23 @@ Route::get('/fincas/actualizar', 'FincasController@elegirFinca');
 Route::post('/fincas/eliminar', 'FincasController@eliminarFinca');
 Route::get('/fincas/eliminar', 'FincasController@seleccionarFinca');
 
+//-----------------------------------------------------------------------------------------------------------
+ // procedimientos productos
+Route::get('/producto/', 'ProductosController@mostrarProductos');
+Route::post('/producto/unico', 'ProductosController@obtenerProducto');
+Route::get('/producto/unico', 'ProductosController@mostrarProducto');
 
-//-----anopro controller-----------------------------------------------------------------------------
-Route::get('/anopro/', 'AnoproController@mostrarAnopro');
+Route::post('/producto/agregar', 'ProductosController@crearProducto');
+Route::get('/producto/agregar', 'ProductosController@agregarProducto');
 
-//-----novedades controller-----------------------------------------------------------------------------
-Route::get('/novedades/', 'NovedadesController@mostrarNovedad');
+Route::put('/producto/actualizar', 'ProductosController@actualizarProducto');
+Route::post('/producto/actualizar', 'Productostroller@editarProducto');
+Route::get('/producto/actualizar', 'ProductosController@elegirProducto');
+
+Route::post('/producto/eliminar', 'ProductosController@eliminarProducto');
+Route::get('/producto/eliminar', 'ProductosController@seleccionarProducto');
+
+ // procedimiento listar usuarioscliente
+Route::get('/usuariocliente/', 'UsuarioClienteController@mostrarUsuarioCliente');
+ //procedimeonto listar suelo
+Route::get('/suelo/', 'SueloController@mostrarSuelo');

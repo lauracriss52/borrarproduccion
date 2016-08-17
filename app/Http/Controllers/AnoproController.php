@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 
 use produccion\Http\Requests;
 
-class AnoproController extends Controller
+class AnoproController extends ClienteController
 {
     //método para mostrar las Año produccion
 	
-  public function mostrarAnopros()
+  public function mostrarAnopro()
     {
     	$anopros = $this->obtenerTodosLosAnopros();
-    	return view('anopros.todos', ['anopros' => $anopros]);
+    	return view('anopro.todos', ['anopro' => $anopros]);
 
-	
+}
 }

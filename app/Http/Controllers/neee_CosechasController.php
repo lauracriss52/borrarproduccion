@@ -16,7 +16,7 @@ $cosechas = $this->obtenerTodasLascosechas();
 	
 	protected function obtenerTodasLascosechas()
 	{
-		$respuesta=$this->realizarPeticion('GET' , 'http://agroproduccion.guayabavelez.com/cosechas');
+		$respuesta=$this->realizarPeticion('GET' , 'http://agroproduccion.com:81/cosechas');
 		//transformacion a json
 		$datos= json_decode($respuesta);
 		$cosechas=$datos->data;

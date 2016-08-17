@@ -17,7 +17,7 @@ class PersonasController extends Controller
 	
 	protected function obtenerTodasLaspersonas()
 	{
-		$respuesta=$this->realizarPeticion('GET' , 'http://www.agroproduccion.com:81/personas');
+		$respuesta=$this->realizarPeticion('GET' , 'http://agroproduccion.com:81/personas');
 		//transformacion a json
 		$datos= json_decode($respuesta);
 		$personas=$datos->data;

@@ -70,8 +70,6 @@ Route::get('/siembras/cosechas/eliminar', 'SiembraCosechasController@seleccionar
 Route::post('/personas/siembras', 'PersonaSiembrasController@mostrarSiembrasPersona');
 Route::get('/personas/siembras', 'PersonaSiembrasController@mostrarPersonas');
 
-
-//-----personas controller-----------------------------------------------------------------------------
 Route::get('/personas', 'PersonasController@mostrarPersonas');
 Route::post('/personas/unico', 'PersonasController@obtenerPersona');
 Route::get('/personas/unico', 'PersonasController@mostrarPersona');
@@ -85,12 +83,26 @@ Route::get('/personas/actualizar', 'PersonasController@elegirPersona');
 
 Route::post('/personas/eliminar', 'PersonasController@eliminarPersona');
 Route::get('/personas/eliminar', 'PersonasController@seleccionarPersona');
-// procedimientos para las fincas
+
+//-----fincas controller-----------------------------------------------------------------------------
 Route::get('/fincas/', 'FincasController@mostrarFincas');
- // procedimiento listar productos
-Route::get('/producto/', 'ProductosController@mostrarProductos');
- // procedimiento listar usuarioscliente
-Route::get('/usuariocliente/', 'UsuarioClienteController@mostrarUsuarioCliente');
- //procedimeonto listar suelo
-Route::get('/suelo/', 'SueloController@mostrarSuelo');
- 
+//buscar estudiante por id
+Route::get('/fincas/unico', 'FincasController@mostrarFinca');
+Route::post('/fincas/unico', 'FincasController@obtenerFinca');
+//Nuevo estudiante
+Route::post('/fincas/agregar', 'FincasController@crearFinca');
+Route::get('/fincas/agregar', 'FincasController@agregarFinca');
+//Actualizar estudiante
+Route::put('/fincas/actualizar', 'FincasController@actualizarFinca');
+Route::post('/fincas/actualizar', 'FincasController@editarFinca');
+Route::get('/fincas/actualizar', 'FincasController@elegirFinca');
+//Eliminar estudiante
+Route::post('/fincas/eliminar', 'FincasController@eliminarFinca');
+Route::get('/fincas/eliminar', 'FincasController@seleccionarFinca');
+
+
+//-----anopro controller-----------------------------------------------------------------------------
+Route::get('/anopro/', 'AnoproController@mostrarAnopro');
+
+//-----novedades controller-----------------------------------------------------------------------------
+Route::get('/novedades/', 'NovedadesController@mostrarNovedad');

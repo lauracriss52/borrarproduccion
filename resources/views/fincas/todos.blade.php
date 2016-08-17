@@ -23,18 +23,18 @@
 			<tbody>
 				@foreach($fincas as $fincas)
 				<tr>
-					<td>{{$finca->id}}</td>
-					<td>{{$finca->nombre_fin}}</td>
-					<td>{{$finca->dapartamento_fin}}</td>
-					<td>{{$finca->vereda_fin}}</td>
-					<td>{{$finca->latitudx}}</td>
-					<td>{{$finca->latitudy}}</td>
-					<td>{{$finca->viaacc_fin}}</td>
-                    <td>{{$finca->intgamilia_fin}}</td>
-                    <td>{{$finca->jovenes1518}}</td>
-                    <td>{{$finca->persona_id}}</td>
-                    <td>{{$finca->created_at}}</td>
-                    <td>{{$finca->updated_at}}</td>
+					<td>{{$fincas->id}}</td>
+					<td>{{$fincas->nombre_fin}}</td>
+					<td>{{$fincas->departamento_fin}}</td>
+					<td>{{$fincas->vereda_fin}}</td>
+					<td>{{$fincas->latitud}}</td>
+					<td>{{$fincas->longitud}}</td>
+					<td>{{$fincas->viaacc_fin}}</td>
+                    <td>{{$fincas->intgamilia_fin}}</td>
+                    <td>{{$fincas->jovenes1518}}</td>
+                    <td>{{$fincas->persona_id}}</td>
+                    <td>{{$fincas->created_at}}</td>
+                    <td>{{$fincas->updated_at}}</td>
 				</tr>
 				@endforeach
 			</tbody>

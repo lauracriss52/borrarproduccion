@@ -120,3 +120,37 @@ Route::get('/productos/eliminar', 'ProductosController@seleccionarProducto');
 Route::get('/usuariocliente/', 'UsuarioClienteController@mostrarUsuarioCliente');
  //procedimeonto listar suelo
 Route::get('/suelo/', 'SueloController@mostrarSuelo');
+
+//-----novedades controller-----------------------------------------------------------------------------
+Route::get('/novedades/', 'NovedadesController@mostrarNovedades');
+
+
+Route::get('/novedades/unico', 'NovedadesController@mostrarNovedad');
+Route::post('/novedades/unico', 'NovedadesController@obtenerNovedad');
+
+Route::post('/producto/{idproducto}/novedad/agregar', 'NovedadesProductosController@crearNovedad');
+Route::get('/producto/{idproducto}/novedad/agregar', 'NovedadesProductosController@agregarNovedad');
+
+Route::put('/producto/{idproducto}/novedad/actualizar', 'NovedadesProductosController@actualizarNovedad');
+Route::post('/producto/{idproducto}/novedad/actualizar', 'NovedadesProductosController@editarNovedad');
+Route::get('/producto/{idproducto}/novedad/actualizar', 'NovedadesProductosController@elegirNovedad');
+
+Route::post('/producto/novedad/eliminar', 'NovedadesProductosController@eliminarNovedad');
+Route::get('/producto/novedad/eliminar', 'NovedadesProductosController@seleccionarNovedad');
+
+//-----anopro controller-----------------------------------------------------------------------------
+Route::get('/renanos/', 'RenanosController@mostrarRenanos');
+//buscar renanos por id
+Route::get('/renanos/unico', 'RenanosController@mostrarRenano');
+Route::post('/renanos/unico', 'RenanosController@obtenerRenano');
+//Agregar renano
+Route::post('/siembra/{idsiembra}/renano/agregar', 'RenanosSiembraController@crearRenanos');
+Route::get('/siembra/{idsiembra}/renano/agregar', 'RenanosSiembraController@agregarRenano');
+//Actualizar renano
+Route::put('/siembra/{idsiembra}/renano/actualizar', 'RenanosSiembraController@actualizarRenano');
+Route::post('/siembra/{idsiembra}/renano/actualizar', 'RenanosSiembraController@editarRenanos');
+Route::get('/siembra/{idsiembra}/renano/actualizar', 'RenanosSiembraController@elegirRenano');
+//Eliminar renano
+Route::post('/siembra/renano/eliminar', 'RenanosSiembraController@eliminarRenanos');
+Route::get('/siembra/renano/eliminar', 'RenanosSiembraController@seleccionarRenanos');
+

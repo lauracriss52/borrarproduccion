@@ -1,28 +1,28 @@
 @extends('layouts.master')
-@section('contenido')
-	@if(sizeof($novedades) > 0)
 
-		<table class="table table-striped table-hover">
+@section('contenido')
+
+	<table class="table table-striped table-hover">
 			<thead>
 				<tr>
 					<th>Id</th>
-					<th>tipnov_nov </th>
-                    <th>camellon_nov </th>
-					<th>fecha_nov </th>
-					<th>tiempo_nov </th>
-                    <th>dosis_nov </th>
-                    <th>costopro_nov </th>
-                    <th>costoman_nov </th>
-                    <th>operario_nov </th>
-					<th>cattoxica_nov </th>
-					<th>estado_nov </th>
-                    <th>siembra_id </th>
-                    <th>producto_id </th>
-
+					<th>Tipo Novedad</th>
+					<th>Camellon</th>
+					<th>Fecha_nov</th>
+					<th>Tiempo</th>
+					<th>Dosis</th>
+					<th>CostoPro</th>
+                    <th>CostoMan</th>
+                    <th>Operario</th>
+                    <th>CatToxica</th>
+                    <th>Estado</th>
+                    <th>Siembra</th>
+                    <th>Producto</th>
+                    <th>Created</th>
+                    <th>updated</th>
 				</tr>
 			</thead>
 			<tbody>
-				@foreach($novedades as $novedades)
 				<tr>
 					<td>{{$novedades->id}}</td>
                     <td>{{$novedades->tipnov_nov}}</td>
@@ -37,23 +37,13 @@
                     <td>{{$novedades->estado_nov}}</td>
                     <td>{{$novedades->siembra_id}}</td>
                     <td>{{$novedades->producto_id}}</td>
-                 
+                    <td>{{$novedades->created_at}}</td>
+                    <td>{{$novedades->updated_at}}</td>
                     
-					
-                    
-				
-					
+
 				</tr>
-				@endforeach
 			</tbody>
-		</table>
-
-		@else
-
-		<div class="alert alert-danger">
-			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-			<strong>Ups</strong> No hay novedades
-		</div>
-
-		@endif
+		</table>	
+        
+        
 @endsection

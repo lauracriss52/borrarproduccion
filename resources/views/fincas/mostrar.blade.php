@@ -35,7 +35,6 @@
                     <td>{{$fincas->persona_id}}</td>
                     <td>{{$fincas->created_at}}</td>
                     <td>{{$fincas->updated_at}}</td>
-				
 				</tr>
 			</tbody>
 		</table>

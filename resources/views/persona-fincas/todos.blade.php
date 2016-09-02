@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('contenido')
-	@if(sizeof($finca) > 0)
+	@if(sizeof($fincas) > 0)
 
 		<table class="table table-striped table-hover">
 			<thead>
@@ -21,7 +21,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach($finca as $finca)
+				@foreach($fincas as $finca)
 				<tr>
 					<td>{{$finca->id}}</td>
 					<td>{{$finca->nombre_fin}}</td>

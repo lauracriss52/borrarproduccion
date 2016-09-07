@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('contenido')
-	@if(sizeof($renano) > 0)
+	@if(sizeof($renanos) > 0)
 
 		<table class="table table-striped table-hover">
 			<thead>
@@ -14,7 +14,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach($renano as $renano)
+				@foreach($renanos as $renano)
 				<tr>
 					<td>{{$renano->id}}</td>
                     <td>{{$renano->ano_ren}}</td>

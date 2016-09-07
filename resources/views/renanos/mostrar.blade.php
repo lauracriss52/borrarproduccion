@@ -15,11 +15,11 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td>{{$renano->id}}</td>
-                    <td>{{$renano->ano_ren}}</td>
-                    <td>{{$renano->proreal_ren}}</td>
-                    <td>{{$renano->proesparada_ren}}</td>
-                    <td>{{$renano->siembra_id}}</td>
+					<td>{{$renanos->id}}</td>
+                    <td>{{$renanos->ano_ren}}</td>
+                    <td>{{$renanos->proreal_ren}}</td>
+                    <td>{{$renanos->proesparada_ren}}</td>
+                    <td>{{$renanos->siembra_id}}</td>
                     
 				</tr>
 			</tbody>

@@ -14,7 +14,7 @@ class RenanosController extends ClienteController
   public function mostrarRenanos()
     {
     	$renanos = $this->obtenerTodasLasRenanos();
-    	return view('renanos.todos', ['renanos' => $renanos]);
+    	return view('renanos.todos', ['renano' => $renanos]);
 }
 	//métodos para buscar una renano
     public function mostrarRenano()

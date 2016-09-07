@@ -12,8 +12,8 @@
 			<tbody>
 				@foreach($suelo as $suelos)
 				<tr>
-					<td>{{$suelo->Id_sue}}</td>
-					<td>{{$suelo->Nombre_sue}}</td>
+					<td>{{$suelos->Id_sue}}</td>
+					<td>{{$suelos->Nombre_sue}}</td>
 				</tr>
 				@endforeach
 			</tbody>

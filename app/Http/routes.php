@@ -119,7 +119,24 @@ Route::get('/productos/eliminar', 'ProductosController@seleccionarProducto');
  // procedimiento listar usuarioscliente
 Route::get('/usuariocliente/', 'UsuarioClienteController@mostrarUsuarioCliente');
  //procedimeonto listar suelo
-Route::get('/suelo/', 'SueloController@mostrarSuelo');
+Route::get('/suelo/', 'SueloController@mostrarSuelos');
+//consultar un suelo
+Route::post('/suelo/unico', 'SueloController@obtenerSuelo');
+Route::get('/suelo/unico', 'SueloController@mostrarSuelo');
+
+//agregar un suelo
+Route::post('/suelo/agregar', 'SueloController@crearSuelo');
+Route::get('/suelo/agregar', 'SueloController@agregarSuelo');
+
+//actualizar un suelo
+Route::put('/suelo/actualizar', 'SueloController@actualizarSuelo');
+Route::post('/suelo/actualizar', 'SueloController@editarSuelo');
+Route::get('/suelo/actualizar', 'SueloController@elegirSuelo');
+
+//eliminiar un suelo
+Route::post('/suelo/eliminar', 'SueloController@eliminarSuelo');
+Route::get('/suelo/eliminar', 'SueloController@seleccionarSuelo');
+
 
 //-----novedades controller-----------------------------------------------------------------------------
 Route::get('/novedades/', 'NovedadesController@mostrarNovedades');

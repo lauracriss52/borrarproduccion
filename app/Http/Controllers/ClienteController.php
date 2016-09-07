@@ -275,13 +275,41 @@ echo $finca->persona_id;
 	
 	//metodo para Suelo
 
-	protected function ListarTodosLosSuelos()
+//metodos para suelo
+	protected function obtenerTodosLosSuelos()
 	{
 		$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/suelo');
 		$datos = json_decode($respuesta);
 		$suelo = $datos->data;
 		return $suelo;
 		}
+protected function obtenerUnSuelo($id)
+    {
+        $respuesta = $this->realizarPeticion('GET', "http://agroproduccion.com:81/suelo/{$Id_sue}");
+        $datos = json_decode($respuesta);
+        $suelo = $datos->data;
+        return $suelo;
+    }
+	
+	
+	
+protected function almacenarSuelo(Request $request)
+    {
+    	$accessToken = 'Bearer ' . $this->obtenerAccessToken();
+        $respuesta = $this->realizarPeticion('POST', 'http://agroproduccion.com:81/suelo', ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->all()]);
+    }
+    protected function modificarSuelo(Request $request)
+    {
+    	$accessToken = 'Bearer ' . $this->obtenerAccessToken();
+        $Id_sue = $request->get('Id_sue');
+        $respuesta = $this->realizarPeticion('PUT', "http://agroproduccion.com:81/suelo/{$Id_sue}", ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->except('Id_sue')]);
+    }
+    protected function removerSuelo(Request $request)
+    {
+    	$accessToken = 'Bearer ' . $this->obtenerAccessToken();
+        $Id_sue = $request->get('suelo_Id_sue');
+        $respuesta = $this->realizarPeticion('DELETE', "http://agroproduccion.com:81/suelo/{$Id_sue}", ['headers' => ['Authorization' => $accessToken]]);
+    }
 
 	//metodo para UsuarioCliente
 	protected function ListarTodosLosUsuarios()

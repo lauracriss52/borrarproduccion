@@ -5,6 +5,7 @@ namespace produccion\Http\Controllers;
 use Illuminate\Http\Request;
 
 use produccion\Http\Requests;
+
 use produccion\Http\Requests\UnicoRequest;
 
 class NovedadesController extends ClienteController
@@ -26,6 +27,6 @@ class NovedadesController extends ClienteController
         $id = $request->get('id');
         $novedad = $this->obtenerUnaNovedad($id);
 	
-	    return view('novedades.mostrar', ['novedades' => $novedad]);
+	    return view('novedades.mostrar', ['novedad' => $novedad]);
 }
 }

@@ -193,134 +193,8 @@ protected function removerCosechaSiembra(Request $request)
 
         return $siembras;
     }
-/**
-     * Métodos para Fincas
-     */
-    protected function obtenerTodasLasFincas()
-    {
-    	$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/fincas');
-    	$datos = json_decode($respuesta);
-    	$fincas = $datos->data;
-    	return $fincas;
-		 }
-	protected function almacenarFinca(Request $request)
-    {
-         $accessToken = 'Bearer ' . $this->obtenerAccessToken();
-		  $idPersona = $request->get('persona_id');
-      $respuesta = $this->realizarPeticion('POST', 'http://agroproduccion.com:81/personas/{$idPersona}/fincas', ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->all()]);
-    }
-	
-	
-//Borrar un finca
 
-    protected function removerFinca(Request $request)
-    {
-    	$accessToken = 'Bearer ' . $this->obtenerAccessToken();
-        $id = $request->get('finca_id');
-     $finca = $this->obtenerUnaFinca($id);
-echo $finca->id;
-echo $finca->persona_id;
-        $respuesta = $this->realizarPeticion('DELETE', "http://agroproduccion.com:81/personas/{$finca->persona_id}/fincas/{$finca->id}", ['headers' => ['Authorization' => $accessToken]]);
-    }
-		
-
-
-	protected function obtenerUnaFinca($id)
-    {
-        $respuesta = $this->realizarPeticion('GET', "http://agroproduccion.com:81/fincas/{$id}");
-        $datos = json_decode($respuesta);
-        $finca = $datos->data;
-        return $finca;
-    }
-	//Editar un finca
- protected function modificarFinca(Request $request)
-    {
-        $accessToken = 'Bearer ' . $this->obtenerAccessToken();
-
-        $idFinca = $request->get('finca_id');
-        $idPersona = $request->get('persona_id');
-
-        $respuesta = $this->realizarPeticion('PUT', "http://agroproduccion.com:81/personas/{$idPersona}/fincas/{$idFinca}", ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->except('id')]);
-    }	
-	
-    
-  /**
-     * Métodos para años produccion
-     */
-    protected function obtenerTodosLosAnopros()
-    {
-    	$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/anopro');
-    	$datos = json_decode($respuesta);
-    	$anopros = $datos->data;
-    	return $anopros;
-		
-    }
-	
-	
-  /**
-     * Métodos para Novedades
-     */
-    protected function obtenerTodosLosNovedades()
-    {
-    	$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/novedades');
-    	$datos = json_decode($respuesta);
-    	$novedades = $datos->data;
-    	return $novedades;
-		
-    }
-	
-	
-	//------------------------------------------------------------------------------->
-	
-	
-	//metodo para Suelo
-
-//metodos para suelo
-	protected function obtenerTodosLosSuelos()
-	{
-		$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/suelo');
-		$datos = json_decode($respuesta);
-		$suelo = $datos->data;
-		return $suelo;
-		}
-protected function obtenerUnSuelo($id)
-    {
-        $respuesta = $this->realizarPeticion('GET', "http://agroproduccion.com:81/suelo/{$Id_sue}");
-        $datos = json_decode($respuesta);
-        $suelo = $datos->data;
-        return $suelo;
-    }
-	
-	
-	
-protected function almacenarSuelo(Request $request)
-    {
-    	$accessToken = 'Bearer ' . $this->obtenerAccessToken();
-        $respuesta = $this->realizarPeticion('POST', 'http://agroproduccion.com:81/suelo', ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->all()]);
-    }
-    protected function modificarSuelo(Request $request)
-    {
-    	$accessToken = 'Bearer ' . $this->obtenerAccessToken();
-        $Id_sue = $request->get('Id_sue');
-        $respuesta = $this->realizarPeticion('PUT', "http://agroproduccion.com:81/suelo/{$Id_sue}", ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->except('Id_sue')]);
-    }
-    protected function removerSuelo(Request $request)
-    {
-    	$accessToken = 'Bearer ' . $this->obtenerAccessToken();
-        $Id_sue = $request->get('suelo_Id_sue');
-        $respuesta = $this->realizarPeticion('DELETE', "http://agroproduccion.com:81/suelo/{$Id_sue}", ['headers' => ['Authorization' => $accessToken]]);
-    }
-
-	//metodo para UsuarioCliente
-	protected function ListarTodosLosUsuarios()
-	{
-		$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/oauth_clients');
-		$datos = json_decode($respuesta);
-		$usuariocliente = $datos->data;
-		return $usuariocliente;
-		}
-
-	//metodo para productos
+//metodos para productos
 	protected function obtenerTodosLosProductos()
 	{
 		$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/productos');
@@ -335,6 +209,8 @@ protected function obtenerUnProducto($id)
         $productos = $datos->data;
         return $productos;
     }
+	
+	
 	
 protected function almacenarProducto(Request $request)
     {
@@ -355,9 +231,115 @@ protected function almacenarProducto(Request $request)
     }
  
 
-}
+ //Métodos para Fincas
+     
+    protected function obtenerTodasLasFincas()
+    {
+    	$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/fincas');
+    	$datos = json_decode($respuesta);
+    	$fincas = $datos->data;
+    	return $fincas;
+		 }
+		
+	protected function obtenerUnaFinca($id)
+    {
+        $respuesta = $this->realizarPeticion('GET', "http://agroproduccion.com:81/fincas/{$id}");
+        $datos = json_decode($respuesta);
+        $finca = $datos->data;
+        return $finca;
+    }
+    protected function almacenarFinca(Request $request)
+    {
+    	$accessToken = 'Bearer ' . $this->obtenerAccessToken();
+        $respuesta = $this->realizarPeticion('POST', 'http://agroproduccion.com:81/personas/{persona_id}/fincas', ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->all()]);
+    }
+ 	 protected function modificarFinca(Request $request)
+    {
+        $accessToken = 'Bearer ' . $this->obtenerAccessToken();
+
+        $idFinca = $request->get('finca_id');
+        $idPersona = $request->get('persona_id');
+
+        $respuesta = $this->realizarPeticion('PUT', "http://agroproduccion.com:81/personas/{$idPersona}/fincas/{$idFinca}", ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->except('id')]);
+    }
+       
+
+	
+	
+	
+protected function removerFinca(Request $request)
+    {
+        $accessToken = 'Bearer ' . $this->obtenerAccessToken();
+        
+        $idFinca = $request->get('finca_id');
+
+        $finca = $this->obtenerUnaFinca($idFinca);
+echo $finca->id;
+echo $finca->persona_id;
+        $respuesta = $this->realizarPeticion('DELETE', "http://agroproduccion.com:81/personas/{$finca->persona_id}/fincas/{$finca->id}", ['headers' => ['Authorization' => $accessToken]]);
+    }
+		
+	/**
+     * Métodos para años produccion
+     */
+  /**
+     * Métodos para Renanos
+     */
 
 
+	
+    protected function obtenerTodasLasRenanos()
+    {
+    	$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/renanos');
+    	$datos = json_decode($respuesta);
+    	$renanos = $datos->data;
+    	return $renanos;
+		 }
+		 
+		 
+		 
+	protected function almacenarRenano(Request $request)
+    {
+        $accessToken = 'Bearer ' . $this->obtenerAccessToken();
+        $idFinca = $request->get('siembra_id');
+        $respuesta = $this->realizarPeticion('POST', "http://agroproduccion.com:81/siembras/{$idSiembra}/renanos", ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->all()]);
+    }
+	
+//Borrar un Renano
+	
+protected function removerRenano(Request $request)
+    {
+        $accessToken = 'Bearer ' . $this->obtenerAccessToken();
+        
+        $idRenano = $request->get('renano_id');
+
+        $renano = $this->obtenerUnaRenano($idRenano);
+echo $renano->id;
+echo $renano->siembra_id;
+        $respuesta = $this->realizarPeticion('DELETE', "http://agroproduccion.com:81/siembras/{$renano->siembra_id}/renanos/{$renano->id}", ['headers' => ['Authorization' => $accessToken]]);
+    }
+	
+	
+	//http://agroproduccion.com:81/personas/5/siembras/5
+	protected function obtenerUnaRenano($id)
+    {
+        $respuesta = $this->realizarPeticion('GET', "http://agroproduccion.com:81/renanos/{$id}");
+        $datos = json_decode($respuesta);
+        $renano = $datos->data;
+        return $renano;
+    }
+	//Editar un renano
+ protected function modificarRenano(Request $request)
+    {
+        $accessToken = 'Bearer ' . $this->obtenerAccessToken();
+        $idRenano = $request->get('renano_id');
+        $idSiembra = $request->get('siembra_id');
+        $respuesta = $this->realizarPeticion('PUT', "http://agroproduccion.com:81/siembras/{$idSiembra}/renanos/{$idRenano}", ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->except('id')]);
+    }
+	
+	
+	
+	
   /**
      * Métodos para Novedades
      */
@@ -376,7 +358,7 @@ protected function obtenerUnaNovedad($id)
         return $novedad;
     
     }
-  	protected function almacenarNovedad(Request $request)
+	protected function almacenarNovedad(Request $request)
     {
         $accessToken = 'Bearer ' . $this->obtenerAccessToken();
         $idNovedad = $request->get('producto_id');
@@ -388,77 +370,58 @@ protected function obtenerUnaNovedad($id)
 
         $idFinca = $request->get('novedad_id');
         $idPersona = $request->get('siembra_id');
-        $respuesta = $this->realizarPeticion('PUT', "http://agroproduccion.com:81/proudctos/{$idProducto}/novedades/{$idNovedad}", ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->except('id')]);
+        $respuesta = $this->realizarPeticion('PUT', "http://agroproduccion.com:81/productos/{$idProducto}/novedades/{$idNovedad}", ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->except('id')]);
 		
 	}
-      protected function removerNovedad(Request $request)
-    {
-    	$accessToken = 'Bearer ' . $this->obtenerAccessToken();
-        $id = $request->get('novedad_id');
-        $respuesta = $this->realizarPeticion('DELETE', "http://agroproduccion.com:81/novedades/{$id}", ['headers' => ['Authorization' => $accessToken]]);
-    }
-	
-
-
-
-/**
-     * Métodos para años produccion
-     */
-  /**
-     * Métodos para Renanos
-     */
-    protected function obtenerTodasLasRenanos()
-    {
-    	$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/renanos');
-    	$datos = json_decode($respuesta);
-    	$renanos = $datos->data;
-    	return $renanos;
-		 }
-		 
-		 
-		 
-	protected function almacenarRenano(Request $request)
+protected function removerNovedad(Request $request)
     {
         $accessToken = 'Bearer ' . $this->obtenerAccessToken();
-
-        $idFinca = $request->get('siembra_id');
-
-        $respuesta = $this->realizarPeticion('POST', "http://agroproduccion.com:81/siembras/{$idSiembra}/renanos", ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->all()]);
-    }
-	
-//Borrar un Renano
-
-	
-	   protected function removerRenano(Request $request)
-    {
-    	$accessToken = 'Bearer ' . $this->obtenerAccessToken();
-        $id = $request->get('renano_id');
-        $respuesta = $this->realizarPeticion('DELETE', "http://agroproduccion.com:81/renanos/{$id}", ['headers' => ['Authorization' => $accessToken]]);
+        $idNovedad = $request->get('novedad_id');
+		
+        $novedad = $this->obtenerUnaNovedad($idNovedad);
+echo $novedad->id;       
+echo $novedad->siembra_id;
+echo $novedad->producto_id;
+        $respuesta = $this->realizarPeticion('DELETE', "http://agroproduccion.com:81/siembra/{$novedad->siembra_id}/productos/{$novedad->producto_id}/novedades/{$novedad->id}", ['headers' => ['Authorization' => $accessToken]]);
     }
 
-
 	
-	
-	//http://agroproduccion.com:81/personas/5/siembras/5
-
-
-
-	protected function obtenerUnaRenano($id)
+ //metodos para suelo
+	protected function obtenerTodosLosSuelos()
+	{
+		$respuesta = $this->realizarPeticion('GET', 'http://agroproduccion.com:81/suelos');
+		$datos = json_decode($respuesta);
+		$suelo = $datos->data;
+		return $suelo;
+		}
+protected function obtenerUnSuelo($Id_sue)
     {
-        $respuesta = $this->realizarPeticion('GET', "http://agroproduccion.com:81/renanos/{$id}");
+        $respuesta = $this->realizarPeticion('GET', "http://agroproduccion.com:81/suelos/{$Id_sue}");
         $datos = json_decode($respuesta);
-        $renano = $datos->data;
-        return $renano;
+        $suelo = $datos->data;
+        return $suelo;
     }
-	//Editar un renano
- protected function modificarRenano(Request $request)
+	
+	
+	
+protected function almacenarSuelo(Request $request)
     {
-        $accessToken = 'Bearer ' . $this->obtenerAccessToken();
-
-        $idFinca = $request->get('renano_id');
-        $idPersona = $request->get('siembra_id');
-
-        $respuesta = $this->realizarPeticion('PUT', "http://agroproduccion.com:81/siembras/{$idSiembra}/renanos/{$idRenano}", ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->except('id')]);
+    	$accessToken = 'Bearer ' . $this->obtenerAccessToken();
+        $respuesta = $this->realizarPeticion('POST', 'http://agroproduccion.com:81/suelos', ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->all()]);
+    }
+    protected function modificarSuelo(Request $request)
+    {
+    	$accessToken = 'Bearer ' . $this->obtenerAccessToken();
+        $Id_sue = $request->get('Id_sue');
+        $respuesta = $this->realizarPeticion('PUT', "http://agroproduccion.com:81/suelos/{$Id_sue}", ['headers' => ['Authorization' => $accessToken], 'form_params' => $request->except('Id_sue')]);
+    }
+    protected function removerSuelo(Request $request)
+    {
+    	$accessToken = 'Bearer ' . $this->obtenerAccessToken();
+        $Id_sue = $request->get('suelo_Id_sue');
+        $respuesta = $this->realizarPeticion('DELETE', "http://agroproduccion.com:81/suelos/{$Id_sue}", ['headers' => ['Authorization' => $accessToken]]);
     }
 
+    
 }
+

@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 use produccion\Http\Requests;
 
-class RenanosSiembraController extends ClienteController
+class RenanosSiembrasController extends ClienteController
 {
-	  public function mostrarPersonas()
+	  public function mostrarSiembras()
     {
     	$siembras = $this->obtenerTodasLasSiembra();
     	return view('siembra-renanos.siembras', ['siembras' => $siembras]);
@@ -21,7 +21,7 @@ class RenanosSiembraController extends ClienteController
 	}
 //Agregar renano
 //1. Formulario para agregar una renano cargando las siembras que ya están en la basede datos
-  public function agregarFinca()
+  public function agregarRenano()
     {
 		 $siembras = $this->obtenerTodasLasRenanos();
 		return view('siembra-renanos.agregar', ['siembras' => $siembras]);
@@ -38,7 +38,7 @@ class RenanosSiembraController extends ClienteController
 //Eliminar una renano
 //1.
 	
-	 public function seleccionarFinca()
+	 public function seleccionarRenanos()
     {
         $renanos = $this->obtenerTodasLasRenanos();
 	
@@ -69,7 +69,7 @@ public function elegirRenano()
         $renano = $this->obtenerUnaRenano($idFinca);
    		
         $siembras = $this->obtenerTodasLasSiembras();
-
+                           
         return view('siembra-renanos.editar', ['renano' => $renano, 'siembras' => $siembras]);
     }
 

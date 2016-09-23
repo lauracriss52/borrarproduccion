@@ -37,7 +37,7 @@ class NovedadesProductosController extends ClienteController
     public function eliminarNovedad(Request $request)
     {
         $this->removerNovedad($request);
-        return redirect('/novedad');
+        return redirect('/novedades');
     }
 
 //actualizar novedades
@@ -53,7 +53,7 @@ public function elegirNovedad()
 
     public function editarNovedad(Request $request)
     {
-        $idFinca = $request->get('novedad_id');
+        $idNovedad = $request->get('novedad_id');
 
         $novedad = $this->obtenerUnaNovedad($idNovedad);
    		

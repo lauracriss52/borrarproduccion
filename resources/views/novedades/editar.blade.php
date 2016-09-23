@@ -2,9 +2,8 @@
 
 @section('contenido')
 
-@if(sizeof($siembras) > 0)
-@if(sizeof($productos) > 0)
-	<form action="{{url('/novedads/actualizar')}}" method="POST" role="form">
+
+	<form action="{{url('/siembra/{idsiembra}/renano/actualizar')}}" method="POST" role="form">
 			{{csrf_field()}}
 	
 			{{method_field('PUT')}}
@@ -72,23 +71,15 @@
 				<input type="text" class="form-control" name="estado_nov" required value="{{$novedad->estado_nov}}">
 			</div>
             
-            <div class="form-group">
-				<label for="">siembra_id</label>
-				<select name="siembra_id" id="inputsiembra_id" class="form-control" required value="{{$novedad->siembra_id}}">
-					<option>Seleccione una Siembra</option>
-					@foreach($siembras as $siembra)
-					<option value="{{$persona->id}}" {{$persona->id === $novedad->siembra_id ? 'selected' : ''}}>{{$siembra->nombre_sie}}</option>
-					@endforeach
-				</select>
-                
-             <div class="form-group">
-				<label for="">producto_id</label>
-				<select name="producto_id" id="inputsiembra_id" class="form-control" required value="{{$novedad->producto_id}}">
-					<option>Seleccione un producto</option>
-					@foreach($productos as $producto)
-					<option value="{{$producto->id}}" {{$persona->id === $novedad->producto_id ? 'selected' : ''}}>{{$producto->nombre_pro}}</option>
-					@endforeach
-				</select>
+            			<div class="form-group">
+				<label for="">Siembra</label>
+				<input type="text" class="form-control" name="siembra_id" required value="{{$novedad->siembra_id}}">
+			</div>
+
+			<div class="form-group">
+				<label for="">Producto</label>
+				<input type="text" class="form-control" name="producto_id" required value="{{$novedad->siembra_id}}">
+			</div>
 
 
 			

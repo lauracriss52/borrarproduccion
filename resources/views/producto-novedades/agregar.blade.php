@@ -1,10 +1,9 @@
 @extends('layouts.master')
 
 @section('contenido')		
-@if(sizeof($siembras) > 0)
-@if(sizeof($productos) > 0)
+
 		
-		<form action="{{url('productos/novedades/agregar')}}" method="POST" role="form">
+		<form action="{{url('/producto/{idproducto}/novedad/agregar')}}" method="POST" role="form">
 			{{csrf_field()}}
 			<legend>Ingrese los Datos de la Novedad</legend>
 		
@@ -64,37 +63,29 @@
 				<label for="">estado_nov</label>
 				<input type="text" class="form-control" name="estado_nov" required>
 			</div>
+            
             			<div class="form-group">
-				<label for="">Siembra</label>
-				<select name="siembra_id" id="inputSiembra_id" class="form-control" required>
-					<option>Seleccione una Siembra</option>
-					@foreach($siembra as $siembra)
-					<option value="{{$siembra->id}}">{{$siembra->nombre_sie}}</option>
-					@endforeach
-                    
-				</select>
-                </div>
-                <div class="form-group">
-				<label for="">Producto</label>
-				<select name="producto_id" id="inputProducto_id" class="form-control" required>
-					<option>Seleccione un Producto</option>
-					@foreach($producto as $producto)
-					<option value="{{$producto->id}}">{{$producto->tipo_pro}}</option>
-					@endforeach
-				</select>
+				<label for="">siembra</label>
+				<input type="text" class="form-control" name="siembra_id" required>
 			</div>
 
+			<div class="form-group">
+				<label for="">Producto</label>
+				<input type="text" class="form-control" name="producto_id" required>
+			</div>
+            
+            		
 	
 		
 					<button type="submit" class="btn btn-primary">Crear Novedad</button>
 		</form>
 
-		@else
 
 		<div class="alert alert-danger">
 			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 			<strong>Ups</strong> No hay productos o siembras en este momento para crear una Novedad
 		</div>
 
-		@endif
+
 @endsection
+

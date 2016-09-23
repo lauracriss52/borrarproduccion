@@ -8,17 +8,17 @@
 			<legend>Crear un Año</legend>
 
 				<div class="form-group">
-				<label for="">ano_ren </label>
+				<label for="">Año </label>
 				<input type="text" class="form-control" name="ano_ren" required>
 			</div>
 		
 			<div class="form-group">
-				<label for="">proreal_ren </label>
+				<label for="">Produccion real </label>
 				<input type="date" class="form-control" name="proreal_ren" required>
 			</div>
 		
 			<div class="form-group">
-				<label for="">proesparada_ren </label>
+				<label for="">Produccion esperada </label>
 				<input type="text" class="form-control" name="proesparada_ren" required>
 			</div>
 		

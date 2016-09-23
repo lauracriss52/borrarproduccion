@@ -2,7 +2,7 @@
 
 @section('contenido')		
 		
-		<form action="{{url('/renano/unico')}}" method="POST" role="form">
+		<form action="{{url('/renanos/unico')}}" method="POST" role="form">
 			{{csrf_field()}}
 			<legend>Ingrese el Id de la Año de rendimiento</legend>
 		

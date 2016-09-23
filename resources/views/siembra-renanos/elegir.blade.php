@@ -2,7 +2,7 @@
 
 @section('contenido')		
 		
-		<form action="{{url('/renanos/actualizar')}}" method="POST" role="form">
+		<form action="{{url('/siembra/{idsiembra}/renanos/actualizar')}}" method="POST" role="form">
 			{{csrf_field()}}
 			<legend>Elija una Año</legend>
 		
@@ -11,10 +11,12 @@
 				<select name="finca_id" id="inputRenano_id" class="form-control" required>
                 <option>Por favor elija una Año</option>
 					@foreach($renanos as $renano)
-					<option value="{{$renano->id}}">{{$renoa->ano_ren}}</option>
+					<option value="{{$renano->id}}">{{$renano->ano_ren}}</option>
 					@endforeach
 				</select>
 			</div>
+            
+            
 		
 			
 		

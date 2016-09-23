@@ -2,7 +2,7 @@
 
 @section('contenido')		
 		
-             <form action="{{url('/renanos/eliminar')}}" method="POST" role="form">
+             <form action="{{url('/siembra/renanos/eliminar')}}" method="POST" role="form">
 			{{csrf_field()}}
 			<legend>Elija un </legend>
 		

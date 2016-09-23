@@ -6,31 +6,31 @@
 			{{csrf_field()}}
 			{{method_field('PUT')}}
 
-			<input type="hidden" name="id" id="inputId" class="form-control" value="{{$renanos->id}}">
+			<input type="hidden" name="id" id="inputId" class="form-control" value="{{$renano->id}}">
 
 			<legend>Editar una Año</legend>
 
 			<div class="form-group">
-				<label for="">ano_ren </label>
-				<input type="text" class="form-control" name="ano_ren" required value="{{$renanos->ano_ren}}">
+				<label for="">Año </label>
+				<input type="text" class="form-control" name="ano_ren" required value="{{$renano->ano_ren}}">
 			</div>
 		
 			<div class="form-group">
-				<label for="">proreal_ren </label>
-				<input type="date" class="form-control" name="proreal_ren" required value="{{$renanos->proreal_ren}}">
+				<label for="">Produccion Real</label>
+				<input type="date" class="form-control" name="proreal_ren" required value="{{$renano->proreal_ren}}">
 			</div>
 		
 			<div class="form-group">
-				<label for="">proesparada_ren </label>
-				<input type="text" class="form-control" name="proesparada_ren" required value="{{$renanos->proesparada_ren}}">
+				<label for="">Produccion esperada </label>
+				<input type="text" class="form-control" name="proesparada_ren" required value="{{$renano->proesparada_ren}}">
 			</div>
             
 			<div class="form-group">
 				<label for="">Siembra</label>
-				<select name="siembra_id" id="inputSiembra_id" class="form-control" required value="{{$renanos->siembra_id}}">
+				<select name="siembra_id" id="inputSiembra_id" class="form-control" required value="{{$renano->siembra_id}}">
 					<option>Seleccione un siembra</option>
 					@foreach($siembras as $siembra)
-					<option value="{{$siembra->id}}" {{$siembra->id === $srenano->siembra_id ? 'selected' : ''}}>{{$siembra->nombre_per}}</option>
+					<option value="{{$siembra->id}}" {{$siembra->id === $renano->siembra_id ? 'selected' : ''}}>{{$siembra->nombre_per}}</option>
 					@endforeach
 				</select>
 			</div>

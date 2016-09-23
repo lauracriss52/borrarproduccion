@@ -2,7 +2,7 @@
 
 @section('contenido')		
 		
-		<form action="{{url('/novedad/actualizar')}}" method="POST" role="form">
+		<form action="{{url('/producto/{idproducto}/novedad/actualizar')}}" method="POST" role="form">
 			{{csrf_field()}}
 			<legend>Elija un Novedad</legend>
 		
